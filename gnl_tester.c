@@ -141,5 +141,26 @@ int main(int argc, char **argv)
 		else
 			printf("Not Good\n");
 	}
+	else if (atoi(argv[1]) == 7)
+	{
+		printf("\n==========================================\n");
+		printf("=========== TEST 7 : Congrats ============\n");
+		printf("==========================================\n\n");
+
+		if (!(fd = open("file7", O_RDONLY)))
+		{
+			printf("Error in open\n");
+			return (0);
+		}
+		while ((i = get_next_line(fd, &line[0])) > 0)
+		{
+			printf("%s\n", line[0]);
+			j++;
+		}
+		if (i == -1)
+			printf ("Error in Fonction - Returned -1\n");
+		else if (j != 26)
+			printf("Wrong Number Of Lines\n");
+	}
 	return (0);
 }
