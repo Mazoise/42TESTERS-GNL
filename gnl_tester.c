@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 			printf("Wrong Number Of Lines\n");
 	}
 
-	if (atoi(argv[1]) == 2)
+	else if (atoi(argv[1]) == 2)
 	{
 		printf("\n==========================================\n");
 		printf("========= TEST 2 : Empty Lines ===========\n");
@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 		else if (j != 10)
 			printf("Wrong Number Of Lines\n");
 	}
-	if (atoi(argv[1]) == 3)
+	else if (atoi(argv[1]) == 3)
 	{
 		printf("\n==========================================\n");
 		printf("======== TEST 3 : The Empty File =========\n");
@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 			printf("Wrong Number Of Lines\n");
 	}
 
-	if (atoi(argv[1]) == 4)
+	else if (atoi(argv[1]) == 4)
 	{
 		printf("\n==========================================\n");
 		printf("========= TEST 4 : One New Line ==========\n");
@@ -109,7 +109,7 @@ int main(int argc, char **argv)
 			printf("Wrong Number Of Lines\n");
 	}
 
-	if (atoi(argv[1]) == 5)
+	else if (atoi(argv[1]) == 5)
 	{
 		printf("\n==========================================\n");
 		printf("========= TEST 5 : Five New Lines ========\n");
