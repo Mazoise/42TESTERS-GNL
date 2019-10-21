@@ -147,16 +147,65 @@ int main(int argc, char **argv)
 		printf("=========== TEST 7 : Congrats ============\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file7", O_RDONLY)))
+		int fd2;
+		int j = 1;
+
+		if (!(fd = open("file8", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
 		}
-		while ((i = get_next_line(fd, &line[0])) > 0)
+		if (!(fd2 = open("file9", O_RDONLY)))
 		{
+			printf("Error in open\n");
+			return (0);
+		}
+		while (j < 8)
+		{
+			if ((i = get_next_line(fd, &line[0])) > 0)
 			printf("%s\n", line[0]);
 			j++;
 		}
+		while (j < 13)
+		{
+			if ((i = get_next_line(fd2, &line[0])) > 0)
+				printf("%s\n", line[0]);
+			j++;
+		}
+		if ((i = get_next_line(fd, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		if ((i = get_next_line(fd2, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		if ((i = get_next_line(fd2, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		if ((i = get_next_line(fd, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		if ((i = get_next_line(fd2, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		if ((i = get_next_line(fd, &line[0])) > 0)
+			printf("%s\n", line[0]);
+		j++;
+		while (j < 24)
+		{
+			if ((i = get_next_line(fd2, &line[0])) > 0)
+				printf("%s\n", line[0]);
+			j++;
+		}
+		while (j < 26)
+		{
+			if ((i = get_next_line(fd, &line[0])) > 0)
+				printf("%s\n", line[0]);
+			j++;
+		}
+		while (( i = get_next_line(fd2, &line[0])) > 0)
+			j++;
+		while ((i = get_next_line(fd, &line[0])) > 0)
+			j++;
 		if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
 		else if (j != 26)
