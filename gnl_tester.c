@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 		}
 		if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j != 265)
+		else if (j != 529)
 			printf("Wrong Number Of Lines\n");
 	}
 
