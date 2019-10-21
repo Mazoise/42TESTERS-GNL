@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 		}
 		if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j != 10)
+		else if (j != 6)
 			printf("Wrong Number Of Lines\n");
 	}
 	else if (atoi(argv[1]) == 6)
