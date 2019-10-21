@@ -1,4 +1,4 @@
-# 42TESTERS
+# 42TESTERS-GNL
 1 - cd to the file with your fonctions
 
 2 - git clone https://github.com/Mazoise/42TESTERS-GNL.git 
