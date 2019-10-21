@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdio.h>
@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 		}
 		if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j != 6)
+		else if (j != 10)
 			printf("Wrong Number Of Lines\n");
 	}
 	else if (atoi(argv[1]) == 6)
