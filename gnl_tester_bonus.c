@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	char	**line;
 	if (argc != 2)
 	{
-		printf("Enter a number between 1 and 6\n");
+		printf("Enter a number between 1 and 7\n");
 		return (0);
 	}
 	j = 1;
