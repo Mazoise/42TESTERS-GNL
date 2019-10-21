@@ -136,10 +136,19 @@ int main(int argc, char **argv)
 		printf("=========== TEST 6 : Wrong FD ============\n");
 		printf("==========================================\n\n");
 
+		if (!(fd = open("file5", O_RDONLY)))
+		{
+			printf("Error in open\n");
+			return (0);
+		}
 		if (get_next_line(180, &line[0]) == -1)
-			printf("Well Done\n");
+			printf("Well Done, you return -1 if no FD\n");
 		else
-			printf("Not Good\n");
+			printf("Not Good, you don't return -1 if no FD\n");
+		if (get_next_line(fd, 0) == -1)
+			printf("Well Done, you return -1 if no line\n");
+		else
+			printf("Not Good, you don't return -1 if no line\n");
 	}
 	else if (atoi(argv[1]) == 7)
 	{
