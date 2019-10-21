@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdio.h>
@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	char	**line;
 	if (argc != 2)
 	{
-		printf("Enter a number between 1 and 7\n");
+		printf("Enter a number between 1 and 6\n");
 		return (0);
 	}
 	j = 1;
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 		}
 		if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j != 529)
+		else if (j != 265)
 			printf("Wrong Number Of Lines\n");
 	}
 
@@ -133,14 +133,9 @@ int main(int argc, char **argv)
 	else if (atoi(argv[1]) == 6)
 	{
 		printf("\n==========================================\n");
-		printf("=========== TEST 6 : Wrong FD ============\n");
+		printf("========== TEST 6 : Wrong input ==========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file5", O_RDONLY)))
-		{
-			printf("Error in open\n");
-			return (0);
-		}
 		if (get_next_line(180, &line[0]) == -1)
 			printf("Well Done, you return -1 if no FD\n");
 		else
@@ -156,6 +151,8 @@ int main(int argc, char **argv)
 		printf("=========== TEST 7 : Congrats ============\n");
 		printf("==========================================\n\n");
 
+		int fd2;
+		
 		if (!(fd = open("file7", O_RDONLY)))
 		{
 			printf("Error in open\n");
