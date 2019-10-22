@@ -46,9 +46,9 @@ int main(int argc, char **argv)
 		else if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
 		
-		else if (j == 529)
+		else if (j == 1057)
 			printf("Well Done");
-		else if (j != 529)
+		else if (j != 1057)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 
