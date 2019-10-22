@@ -136,7 +136,7 @@ int main(int argc, char **argv)
 	else if (atoi(argv[1]) == 5)
 	{
 		printf("\n==========================================\n");
-		printf("========= TEST 5 : Five New Lines ========\n");
+		printf("========= TEST 5 : Four New Lines ========\n");
 		printf("==========================================\n\n");
 
 		if (!(fd = open("file5", O_RDONLY)))
@@ -163,7 +163,7 @@ int main(int argc, char **argv)
 	else if (atoi(argv[1]) == 6)
 	{
 		printf("\n==========================================\n");
-		printf("=========== TEST 6 : Wrong FD ============\n");
+		printf("========= TEST 6 : Wrong Input ===========\n");
 		printf("==========================================\n\n");
 
 		if (!(fd = open("file5", O_RDONLY)))
