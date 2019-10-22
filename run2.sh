@@ -1,1 +1,1 @@
-gcc -Wall -Werror -Wextra gnl_tester.c ../get_next_line.c ../get_next_line_utils.c -I ../ -D BUFFER_SIZE=2
+gcc -Wall -Werror -Wextra gnl_tester.c ../get_next_line.c ../get_next_line_utils.c -I ../ -D BUFFER_SIZE=2 && ./a.out 2 && ./a.out 3 && ./a.out 4 && ./a.out 5 && ./a.out 6 && ./a.out 7
