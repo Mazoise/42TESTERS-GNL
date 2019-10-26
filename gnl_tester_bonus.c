@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/10/22 17:41:26 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/10/26 15:16:30 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int main(int argc, char **argv)
 	*line = 0;
 	if (atoi(argv[1]) == 1)
 	{
-		printf("==========================================\n");
+		printf("\n==========================================\n");
 		printf("========== TEST 1 : The Alphabet =========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file1", O_RDONLY)))
+		if (!(fd = open("files/file1", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
@@ -49,18 +49,21 @@ int main(int argc, char **argv)
 		while ((i = get_next_line(fd, &line[0])) > 0)
 		{
 			printf("|%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
+		printf("|%s\n", line[0]);
+		free(line[0]);
+		close(fd);
 		if (BUFFER_SIZE == 0 && i == -1)
 			printf ("Well Done - Returned -1\n");
 		else if (BUFFER_SIZE == 0 && i != -1)
 			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
 		else if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		
-		else if (j == 1057)
+		else if (j == 1056)
 			printf("Well Done");
-		else if (j != 1057)
+		else if (j != 1056)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 
@@ -70,25 +73,29 @@ int main(int argc, char **argv)
 		printf("========= TEST 2 : Empty Lines ===========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file2", O_RDONLY)))
+		if (!(fd = open("files/file2", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
 		}
 		while ((i = get_next_line(fd, &line[0])) > 0)
 		{
-			printf("%d : %s\n", j, line[0]);
+			printf("|%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
+		printf("|%s\n", line[0]);
+		free(line[0]);
+		close(fd);
 		if (BUFFER_SIZE == 0 && i == -1)
 			printf ("Well Done - Returned -1\n");
 		else if (BUFFER_SIZE == 0 && i != -1)
 			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
 		else if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j == 10)
+		else if (j == 9)
 			printf("Well Done");
-		else if (j != 10)
+		else if (j != 9)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 	else if (atoi(argv[1]) == 3)
@@ -97,16 +104,52 @@ int main(int argc, char **argv)
 		printf("======== TEST 3 : The Empty File =========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file3", O_RDONLY)))
+		if (!(fd = open("files/file3", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
 		}
 		while ((i = get_next_line(fd, &line[0])) > 0)
 		{
-			printf("%d : %s\n", j, line[0]);
+			printf("|%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
+		printf("|%s\n", line[0]);
+		free(line[0]);
+		close(fd);
+		if (BUFFER_SIZE == 0 && i == -1)
+			printf ("Well Done - Returned -1\n");
+		else if (BUFFER_SIZE == 0 && i != -1)
+			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
+		else if (i == -1)
+			printf ("Error in Fonction - Returned -1\n");
+		else if (j == 1)
+			printf("Well Done");
+		else if (j != 1)
+			printf("Not Good - Wrong Number Of Lines\n");
+	}
+
+	else if (atoi(argv[1]) == 4)
+	{
+		printf("\n==========================================\n");
+		printf("========= TEST 4 : One New Line ==========\n");
+		printf("==========================================\n\n");
+
+		if (!(fd = open("files/file4", O_RDONLY)))
+		{
+			printf("Error in open\n");
+			return (0);
+		}
+		while ((i = get_next_line(fd, &line[0])) > 0)
+		{
+			printf("|%s\n", line[0]);
+			free(line[0]);
+			j++;
+		}
+		printf("|%s\n", line[0]);
+		free(line[0]);
+		close(fd);
 		if (BUFFER_SIZE == 0 && i == -1)
 			printf ("Well Done - Returned -1\n");
 		else if (BUFFER_SIZE == 0 && i != -1)
@@ -119,59 +162,35 @@ int main(int argc, char **argv)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 
-	else if (atoi(argv[1]) == 4)
-	{
-		printf("\n==========================================\n");
-		printf("========= TEST 4 : One New Line ==========\n");
-		printf("==========================================\n\n");
-
-		if (!(fd = open("file4", O_RDONLY)))
-		{
-			printf("Error in open\n");
-			return (0);
-		}
-		while ((i = get_next_line(fd, &line[0])) > 0)
-		{
-			printf("%d : %s\n", j, line[0]);
-			j++;
-		}
-		if (BUFFER_SIZE == 0 && i == -1)
-			printf ("Well Done - Returned -1\n");
-		else if (BUFFER_SIZE == 0 && i != -1)
-			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
-		else if (i == -1)
-			printf ("Error in Fonction - Returned -1\n");
-		else if (j == 3)
-			printf("Well Done");
-		else if (j != 3)
-			printf("Not Good - Wrong Number Of Lines\n");
-	}
-
 	else if (atoi(argv[1]) == 5)
 	{
 		printf("\n==========================================\n");
 		printf("========= TEST 5 : Four New Lines ========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file5", O_RDONLY)))
+		if (!(fd = open("files/file5", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
 		}
 		while ((i = get_next_line(fd, &line[0])) > 0)
 		{
-			printf("%d : %s\n", j, line[0]);
+			printf("|%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
+		printf("|%s\n", line[0]);
+		free(line[0]);
+		close(fd);
 		if (BUFFER_SIZE == 0 && i == -1)
 			printf ("Well Done - Returned -1\n");
 		else if (BUFFER_SIZE == 0 && i != -1)
 			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
 		else if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j == 6)
+		else if (j == 5)
 			printf("Well Done");
-		else if (j != 6)
+		else if (j != 5)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 	else if (atoi(argv[1]) == 6)
@@ -180,7 +199,7 @@ int main(int argc, char **argv)
 		printf("========= TEST 6 : Wrong Input ===========\n");
 		printf("==========================================\n\n");
 
-		if (!(fd = open("file5", O_RDONLY)))
+		if (!(fd = open("files/file5", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
@@ -193,6 +212,7 @@ int main(int argc, char **argv)
 			printf("Well Done, you return -1 if no line\n");
 		else
 			printf("Not Good, you don't return -1 if no line\n");
+		close(fd);
 	}
 	else if (atoi(argv[1]) == 7)
 	{
@@ -203,12 +223,12 @@ int main(int argc, char **argv)
 		int fd2;
 		int j = 1;
 
-		if (!(fd = open("file8", O_RDONLY)))
+		if (!(fd = open("files/file8", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
 		}
-		if (!(fd2 = open("file9", O_RDONLY)))
+		if (!(fd2 = open("files/file9", O_RDONLY)))
 		{
 			printf("Error in open\n");
 			return (0);
@@ -216,58 +236,72 @@ int main(int argc, char **argv)
 		while (j < 8)
 		{
 			if ((i = get_next_line(fd, &line[0])) > 0)
-			printf("%s\n", line[0]);
+				printf("%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
 		while (j < 13)
 		{
 			if ((i = get_next_line(fd2, &line[0])) > 0)
 				printf("%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
 		if ((i = get_next_line(fd, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
 		if ((i = get_next_line(fd2, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
 		if ((i = get_next_line(fd2, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
 		if ((i = get_next_line(fd, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
 		if ((i = get_next_line(fd2, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
 		if ((i = get_next_line(fd, &line[0])) > 0)
 			printf("%s\n", line[0]);
+		free(line[0]);
 		j++;
-		while (j < 24)
+		while (j < 23)
 		{
 			if ((i = get_next_line(fd2, &line[0])) > 0)
 				printf("%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
-		while (j < 26)
+		get_next_line(fd2, &line[0]);
+		printf("%s\n", line[0]);
+		free(line[0]);
+		j++;
+		while (j < 25)
 		{
 			if ((i = get_next_line(fd, &line[0])) > 0)
 				printf("%s\n", line[0]);
+			free(line[0]);
 			j++;
 		}
-		while (( i = get_next_line(fd2, &line[0])) > 0)
-			j++;
-		while ((i = get_next_line(fd, &line[0])) > 0)
-			j++;
+		get_next_line(fd, &line[0]);
+		printf("%s\n", line[0]);
+		free(line[0]);
+		close(fd);
 		if (BUFFER_SIZE == 0 && i == -1)
 			printf ("Well Done - Returned -1\n");
 		else if (BUFFER_SIZE == 0 && i != -1)
 			printf ("Not Good - Did not return -1 for BUFFER_SIZE=0\n");
 		else if (i == -1)
 			printf ("Error in Fonction - Returned -1\n");
-		else if (j == 26)
+		else if (j == 25)
 			printf("Well Done");
-		else if (j != 26)
+		else if (j != 25)
 			printf("Not Good - Wrong Number Of Lines\n");
 	}
 	return (0);

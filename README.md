@@ -5,4 +5,4 @@
 
 3 - cd 42TESTERS-GNL
 
-4 - sh run[...].sh or bonusrun[...].sh
+4 - bash all_tests.sh

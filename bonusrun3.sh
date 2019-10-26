@@ -1,1 +1,1 @@
-gcc -Wall -Werror -Wextra gnl_tester_bonus.c ../get_next_line_bonus.c -I ../ -D BUFFER_SIZE=3 && ./a.out 2 && ./a.out 3 && ./a.out 4 && ./a.out 5 && ./a.out 6 && ./a.out 7
+gcc -Wall -Werror -Wextra gnl_tester_bonus.c ../get_next_line_bonus.c ../get_next_line_utils_bonus.c -I ../ -D BUFFER_SIZE=3 && ./a.out 2 && ./a.out 3 && ./a.out 4 && ./a.out 5 && ./a.out 6 && ./a.out 7

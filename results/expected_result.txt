@@ -1,0 +1,75 @@
+
+==========================================
+========= TEST 2 : Empty Lines ===========
+==========================================
+
+|Cette ligne se termine par un point.
+|La ligne suivante est vide.
+|
+|Les 2 lignes suivantes sont vides
+|
+|
+|Et encore les 2 suivantes.
+|
+|
+Well Done
+==========================================
+======== TEST 3 : The Empty File =========
+==========================================
+
+|
+Well Done
+==========================================
+========= TEST 4 : One New Line ==========
+==========================================
+
+|
+|
+Well Done
+==========================================
+========= TEST 5 : Four New Lines ========
+==========================================
+
+|
+|
+|
+|
+|
+Well Done
+==========================================
+========= TEST 6 : Wrong Input ===========
+==========================================
+
+Well Done, you return -1 if no FD
+Well Done, you return -1 if no line
+
+==========================================
+=========== TEST 7 : Congrats ============
+==========================================
+
+   OOOO
+ OOOOOOOOO
+OOOOOOOOOOOO
+OOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+ OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+  OOOOOOOOOOOOOO
+   OOOOOOOOOOOOOO
+   OOOOOOOOOOOOOO
+   OOOOO \_| \_|O
+   OOOO \/  \/  \
+   OOOO (o   )o  )
+   O/c   \__/ --.
+   O\_   ,     -'
+    O|  '\_______)
+     |       _)
+     |      |
+     oooooooo
+    /        \
+Well Done
