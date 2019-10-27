@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl_tester_stdin.c                                 :+:      :+:    :+:   */
+/*   gnl_tester_devrandom.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:13 by mchardin          #+#    #+#             */
-/*   Updated: 2019/10/27 19:20:57 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/10/27 19:20:48 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@
 
 int main()
 {
-	int		i;
+	int		fd;
 	int		j;
 	char	*line = 0;
 
 	j = 1;
-	while ((i = get_next_line(0, &line)) > 0)
+	if (!(fd = open("/dev/random", O_RDONLY)))
+		{
+			printf("Error in open\n");
+			return (0);
+		}
+		while (get_next_line(fd, &line) > 0)
 		{
 			printf("%s\n", line);
 			free(line);
 			j++;
 		}
-		free(line);
 }

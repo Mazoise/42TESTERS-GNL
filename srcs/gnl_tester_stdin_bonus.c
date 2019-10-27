@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:13 by mchardin          #+#    #+#             */
-/*   Updated: 2019/10/27 18:12:58 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/10/27 19:21:01 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 
 int main()
 {
-	int		i;
 	int		j;
 	char	*line = 0;
 
 	j = 1;
-while ((i = get_next_line(0, &line)) > 0)
+while (get_next_line(0, &line) > 0)
 		{
 			printf("%s\n", line);
 			free(line);
