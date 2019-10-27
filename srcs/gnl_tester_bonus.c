@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/10/27 18:15:28 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/10/27 19:42:25 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+static void    ft_bnotzero(void *b, size_t n)
+{
+        unsigned char	*a;
+        size_t			i;
+
+        a = b;
+        i = 0;
+        while (i < n)
+        {
+                a[i] = 42;
+                i++;
+        }
+}
+
 int main()
 {
 	int		fd;
 	int		i;
 	int		j;
 	char	*line = 0;
+	char	*memtester = 0;
 
+	if(!(memtester = malloc(sizeof(char) * 150)))
+	{
+		printf("Malloc error in main\n");
+		return (0);
+	}
+	ft_bnotzero(memtester, 150);
 	j = 1;
 		printf("\n==========================================\n");
 		printf("========== TEST 1 : The Alphabet =========\n");
@@ -334,6 +355,6 @@ int main()
 			printf("Well Done\n");
 		else if (j != 25)
 			printf("Not Good - Wrong Number Of Lines\n");
-	
+	free(memtester);
 	return (0);
 }
