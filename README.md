@@ -5,4 +5,4 @@
 
 3 - cd 42TESTERS-GNL
 
-4 - bash all_tests.sh
+4 - bash all_tests.sh or all_tests_with_bonus.sh
