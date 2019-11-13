@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/10/28 20:02:17 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/11/13 13:04:20 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main()
 {
