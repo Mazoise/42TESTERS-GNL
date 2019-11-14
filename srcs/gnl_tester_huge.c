@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/11/13 13:04:29 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/11/14 20:49:10 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main()
 	else if (i == -1)
 		printf ("Error in Fonction - Returned -1\n");
 	else if (j == 1056)
-		printf("Well Done");
+		printf("\nRight number of lines\n");
 	else if (j != 1056)
 		printf("Not Good - Wrong Number Of Lines\n");
 	j = 1;
@@ -79,7 +79,7 @@ int main()
 	else if (i == -1)
 		printf ("Error in Fonction - Returned -1\n");
 	else if (j == 2916)
-		printf("Well Done\n");
+		printf("\nRight number of lines\n");
 	else if (j != 2916)
 		printf("Not Good - Wrong Number Of Lines\n");
 	j = 1;
@@ -108,7 +108,7 @@ int main()
 	else if (i == -1)
 		printf ("Error in Fonction - Returned -1\n");
 	else if (j == 1)
-		printf("Well Done\n");
+		printf("\nRight number of lines\n");
 	else if (j != 1)
 		printf("Not Good - Wrong Number Of Lines\n");
 	return (0);
