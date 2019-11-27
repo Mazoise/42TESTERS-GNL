@@ -118,14 +118,7 @@ Right number of lines
 Right number of lines
 
 ==========================================
-========= TEST 6 : Wrong Input ===========
-==========================================
-
-Well Done, you return -1 if no FD
-Well Done, you return -1 if no line
-
-==========================================
-============== TEST 7 : 42 ===============
+============== TEST 6 : 42 ===============
 ==========================================
 
 |answer to life the universe and everythin
@@ -135,7 +128,7 @@ Well Done, you return -1 if no line
 Right number of lines
 
 ==========================================
-============= TEST 8 : Marge =============
+============= TEST 7 : Marge =============
 ==========================================
 
 |    OOOO            |
@@ -165,3 +158,10 @@ Right number of lines
 |     /        \     |
 
 Right number of lines
+
+==========================================
+========= TEST 8 : Wrong Input ===========
+==========================================
+
+Well Done, you return -1 if read fails
+

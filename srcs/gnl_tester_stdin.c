@@ -6,16 +6,17 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:13 by mchardin          #+#    #+#             */
-/*   Updated: 2019/11/13 13:04:41 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/11/27 09:57:40 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+int				get_next_line(int fd, char **line);
 
 int main()
 {
