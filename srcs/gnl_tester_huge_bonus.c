@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/11/27 10:28:21 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/12/15 17:23:19 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,13 @@ int main()
 		printf("\nNot Good - Wrong Number Of Lines\n");
 	j = 1;
 	printf("\n==========================================\n");
-	printf("======== TEST 8 : SUPER LONG LINE ========\n");
+	printf("======== TEST 8 : SUPER LONG LINES =======\n");
 	printf("==========================================\n\n");
 	k = 0;
 	while (k < 42)
 	{
-		if (!(fd_tab[k] = open("files/huge_line", O_RDONLY)))
+		j = 1;
+		if (!(fd_tab[k] = open("files/huge_lines", O_RDONLY)))
 		{
 			printf("\nError in open\n");
 			return (0);
@@ -101,9 +102,9 @@ int main()
 		free(line);
 		if (i == -1)
 			printf ("\nError in Fonction - Returned -1\n");
-		else if (j == 1)
+		else if (j == 3)
 			printf("\nRight number of lines\n\n");
-		else if (j != 1)
+		else if (j != 3)
 			printf("\nNot Good - Wrong Number Of Lines\n");
 		k++;
 	}

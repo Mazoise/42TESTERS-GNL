@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:13 by mchardin          #+#    #+#             */
-/*   Updated: 2019/11/27 10:28:21 by mchardin         ###   ########.fr       */
+/*   Updated: 2019/12/15 17:19:49 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,6 +237,7 @@ int main()
 		free(line);
 		j++;
 	}
+	free(line);
 	while ((i = get_next_line(fd2, &line)) > 0)
 	{
 		printf("%s\n", line);
@@ -244,6 +245,7 @@ int main()
 		j++;
 	}
 	printf("%s\n", line);
+	free(line);
 	close(fd);
 	close(fd2);
 
