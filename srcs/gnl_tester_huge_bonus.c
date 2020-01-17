@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2019/12/15 17:23:19 by mchardin         ###   ########.fr       */
+/*   Updated: 2020/01/17 15:09:02 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,28 +86,31 @@ int main()
 	k = 0;
 	while (k < 42)
 	{
-		j = 1;
 		if (!(fd_tab[k] = open("files/huge_lines", O_RDONLY)))
 		{
 			printf("\nError in open\n");
 			return (0);
 		}
-		while ((i = get_next_line(fd_tab[k], &line)) > 0)
-		{
-			printf("%s\n", line);
-			free(line);
-			j++;
-		}
-		printf("%s\n", line);
-		free(line);
-		if (i == -1)
-			printf ("\nError in Fonction - Returned -1\n");
-		else if (j == 3)
-			printf("\nRight number of lines\n\n");
-		else if (j != 3)
-			printf("\nNot Good - Wrong Number Of Lines\n");
-		k++;
-	}
+        k++;
+    }
+    int ret;
+    while (i < 3)
+    {
+        k = 0;
+        while (k < 42)
+        {
+            ret = get_next_line(fd_tab[k], &line);
+            if (ret == -1)
+            {
+                printf ("\nError in Fonction - Returned -1\n");
+                return (0);
+            }
+            printf("%s\n", line);
+            free(line);
+            k++;
+        }
+        i++;
+    }
 	while (--k >= 0)
 		close(fd_tab[k]);
 	return (0);
