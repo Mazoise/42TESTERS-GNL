@@ -6,7 +6,7 @@
 /*   By: mchardin <mchardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:41:21 by mchardin          #+#    #+#             */
-/*   Updated: 2020/01/17 15:09:02 by mchardin         ###   ########.fr       */
+/*   Updated: 2020/01/17 15:22:49 by mchardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int main()
 	k = 0;
 	while (k < 42)
 	{
-		if (!(fd_tab[k] = open("files/huge_lines", O_RDONLY)))
+		if (!(fd_tab[k] = open(k % 2 ? "files/huge_lines" : "files/huge_lines2", O_RDONLY)))
 		{
 			printf("\nError in open\n");
 			return (0);
@@ -107,6 +107,26 @@ int main()
             }
             printf("%s\n", line);
             free(line);
+            k++;
+        }
+        i++;
+    }
+    while (i < 5)
+    {
+        k = 0;
+        while (k < 42)
+        {
+            if (k % 2 == 0)
+            {
+                ret = get_next_line(fd_tab[k], &line);
+                if (ret == -1)
+                {
+                    printf ("\nError in Fonction - Returned -1\n");
+                    return (0);
+                }
+                printf("%s\n", line);
+                free(line);
+            }
             k++;
         }
         i++;
