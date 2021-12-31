@@ -1,5 +1,7 @@
 # 42TESTERS-GNL
 
+/!\ OBSOLETE SINCE THE 2021 UPDATE OF THE PROJECT /!\
+
 This is a complete tester for the 2019 version of the 42 project GetNextLine.
 However it does not test leaks in as much detail as the moulinette. /!\
 
